@@ -3,13 +3,16 @@
 #include "defs.h"
 
 struct list {
-	T ele[MAX_ELE];
+	T *ele;
 	int counter;
+	int capacity;
 };
 
-struct list *create_list();
+struct list *create_list(int init_cap);
+
 struct list *insert(struct list *l, int i, T e);
 struct list *delete_at(struct list *l, int i);
+
 int size( struct list *l );
 T get( struct list *l, int i );
 void replace( struct list *l, int i, T e );
